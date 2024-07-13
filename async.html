@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+</body>
+<script>
+
+    function myStopFunction() {
+        console.log("button stop");
+        clearInterval(timer);
+    }
+    function myStartFunction() {
+        timer = setInterval(function () {
+            console.log("button start", Date.now());
+        }, 1000);
+    }
+
+    document.getElementById("start").addEventListener("click", function (e) {
+        e.preventDefault()
+        myStartFunction()
+    });
+    document.getElementById("stop").addEventListener("click", function (e) {
+        e.preventDefault()
+        myStopFunction();
+    });
+
+</script>
+
+</html>
